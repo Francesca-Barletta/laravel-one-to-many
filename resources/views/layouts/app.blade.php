@@ -52,6 +52,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.projects.create')}}">Crea progetto</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.types.index')}}">Tipologie</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.types.create')}}">Aggiungi Tipologia</a>
+                        </li>
+                       
                     </ul>
 
                     <!-- Right Side Of Navbar -->
