@@ -8,8 +8,8 @@
           <th>Progetto</th>
           <th>Slug</th>
           <th>Descrizione</th>
-          <th>Link alla cartella git-hub</th>
-          <th>Tipologia</th>
+          <th class="text-center">Link alla cartella git-hub</th>
+          <th class="text-center">Tipologia</th>
           <th></th>
           <th></th>
           <th></th>
@@ -22,14 +22,14 @@
             <td>{{ $project->progetto }}</td>
             <td>{{ $project->slug }}</td>
             <td>{{ $project->descrizione }}</td>
-            <td><a href="{{ $project->link }}">Link</a></td>
-            <td>{{ optional($project->type)->name }}</td>
-            <td><a href="{{ route('admin.projects.show', $project) }}">Mostra</a></td>
-            <td><a href="{{ route('admin.projects.edit', $project) }}">Modifica</a></td>
+            <td class="text-center"><a href="{{ $project->link }}" class="text-decoration-none btn btn-outline-info">Vai alla repo</a></td>
+            <td class="text-center">{{ optional($project->type)->name }}</td>
+            <td><a href="{{ route('admin.projects.show', $project) }}" class="text-decoration-none btn btn-outline-primary" target="_blank">Mostra</a></td>
+            <td><a href="{{ route('admin.projects.edit', $project) }}"class="text-decoration-none btn btn-outline-success">Modifica</a></td>
             <td>
               <form action="{{ route('admin.projects.destroy', $project) }}" method="POST" class="delete-form">
     
-                <button class="btn btn-link link-danger">Elimina</button>
+                <button type="button" class="btn btn-outline-danger">Elimina</button>
                 @csrf
                 @method('DELETE')
             
