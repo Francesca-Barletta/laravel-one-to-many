@@ -31,7 +31,7 @@
         <td><a href="{{ route('admin.projects.show', $project) }}">Mostra</a></td>
         <td><a href="{{ route('admin.projects.edit', $project) }}">Modifica</a></td>
         <td>
-          <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+          <form action="{{ route('admin.projects.destroy', $project) }}" method="POST" class="m-0">
 
             <button class="btn btn-link link-danger">Elimina</button>
             @csrf
