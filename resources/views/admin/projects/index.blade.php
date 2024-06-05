@@ -7,6 +7,7 @@
       <th>Progetto</th>
       <th>Descrizione</th>
       <th>Link alla cartella git-hub</th>
+      <th>Tipologia</th>
       <th></th>
       <th></th>
       <th></th>
@@ -24,6 +25,7 @@
         <td>{{ $project->progetto }}</td>
         <td>{{ $project->descrizione }}</td>
         <td><a href="{{ $project->link }}">Link</a></td>
+        <td>{{ optional($project->type)->name }}</td>
         <td><a href="{{ route('admin.projects.show', $project) }}">Mostra</a></td>
         <td><a href="{{ route('admin.projects.edit', $project) }}">Modifica</a></td>
         <td>

@@ -24,7 +24,8 @@ class StoreProjectRequest extends FormRequest
         return [
             'progetto' => 'required|string',
             'descrizione' => 'required|max:2000',
-            'link' =>'required|string'
+            'link' =>'required|string',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
 }
