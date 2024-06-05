@@ -5,6 +5,7 @@
     <tr>
       <th>ID</th>
       <th>Progetto</th>
+      <th>Slug</th>
       <th>Descrizione</th>
       <th>Link alla cartella git-hub</th>
       <th>Tipologia</th>
@@ -23,6 +24,7 @@
       <tr>
         <th scope="row">{{ $project->id }}</th>
         <td>{{ $project->progetto }}</td>
+        <td>{{ $project->slug }}</td>
         <td>{{ $project->descrizione }}</td>
         <td><a href="{{ $project->link }}">Link</a></td>
         <td>{{ optional($project->type)->name }}</td>

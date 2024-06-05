@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 
@@ -42,7 +43,21 @@ class ProjectController extends Controller
         //     'link' =>'required|string'
         // ]);
 
-        $form_data = $request->all();
+        $form_data = $request->validated();
+
+        $base_slug = Str::slug($form_data['progetto']);
+        $slug = $base_slug;
+        $n = 0;
+
+        do{
+            $find = Project::where('slug', $slug)->first();
+            if($find !== null){
+                $n++;
+                $slug = $base_slug . '_' . $n;
+            }
+        }while ($find !== null);
+        $form_data['slug'] = $slug;
+
         $new_project = Project::create($form_data);
         return to_route('admin.projects.show', $new_project);
     }
@@ -60,7 +75,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::orderBy('name', 'asc')->get();
+
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
@@ -74,9 +91,9 @@ class ProjectController extends Controller
         //     'descrizione' => 'required|max:2000',
         //     'link' =>'required|string'
         // ]);
-        $form_data = $request->all();
-        $project->fill($form_data);
-        $project->save();
+        $form_data = $request->validated();
+        $project->update($form_data);
+ 
         return to_route('admin.projects.show', $project);
     }
 
