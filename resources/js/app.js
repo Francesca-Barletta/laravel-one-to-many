@@ -9,7 +9,7 @@ import.meta.glob([
 
 document.querySelectorAll('.delete-form').forEach(form =>{
     form.addEventListener('submit', (ev)=>{
-        
+        console.log('click');
         ev.preventDefault();
 
         const modalDomElement = form.querySelector('.modal');
