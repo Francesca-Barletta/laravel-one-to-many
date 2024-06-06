@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title','Progetti | Francesca Barletta')
 @section('content')
 <div class="index-content position-relative">
   <table class="table mh-100">
@@ -24,7 +25,7 @@
             <td>{{ $project->descrizione }}</td>
             <td class="text-center"><a href="{{ $project->link }}" class="text-decoration-none btn btn-outline-info">Vai alla repo</a></td>
             <td class="text-center">{{ optional($project->type)->name }}</td>
-            <td><a href="{{ route('admin.projects.show', $project) }}" class="text-decoration-none btn btn-outline-primary" target="_blank">Mostra</a></td>
+            <td><a href="{{ route('admin.projects.show', $project) }}" class="text-decoration-none btn btn-outline-primary">Mostra</a></td>
             @auth
             <td><a href="{{ route('admin.projects.edit', $project) }}"class="text-decoration-none btn btn-outline-success">Modifica</a></td>
             @endauth

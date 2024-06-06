@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('Progetti|Francesca Barletta')
 @section('content')
     <div class="container">
         <h2>Crea un nuovo progetto</h2>
