@@ -25,7 +25,10 @@
             <td class="text-center"><a href="{{ $project->link }}" class="text-decoration-none btn btn-outline-info">Vai alla repo</a></td>
             <td class="text-center">{{ optional($project->type)->name }}</td>
             <td><a href="{{ route('admin.projects.show', $project) }}" class="text-decoration-none btn btn-outline-primary" target="_blank">Mostra</a></td>
+            @auth
             <td><a href="{{ route('admin.projects.edit', $project) }}"class="text-decoration-none btn btn-outline-success">Modifica</a></td>
+            @endauth
+            @auth
             <td>
               <form action="{{ route('admin.projects.destroy', $project) }}" method="POST" class="delete-form">
     
@@ -42,6 +45,7 @@
               </div>
                 
               </form>
+              @endauth
             </td>
     
           </tr>

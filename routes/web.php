@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\TypeController;
-use App\Http\Controllers\Admin\ProjectController as PublicProjectController;
+use App\Http\Controllers\ProjectController as PublicProjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/projects', ProjectController::class)->only(['index', 'show']);
+// /projects
+Route::get('/projects', [PublicProjectController::class, 'index'])->name('projects.index');
+Route::get('/projects/show/{project}', [PublicProjectController::class, 'show'])->name('projects.show');
 
 
 Route::middleware(['auth', 'verified'])
@@ -32,6 +34,7 @@ Route::middleware(['auth', 'verified'])
             return view('admin.dashboard');
         })->name('dashboard');
 
+        // /admin/projects
         Route::resource('projects', ProjectController::class);
         Route::resource('types', TypeController::class);
 });

@@ -10,11 +10,6 @@
       <th></th>
       <th></th>
       <th></th>
-
-      
-
-    
-
     </tr>
   </thead>
   <tbody>
@@ -25,24 +20,9 @@
         <td>{{ $project->descrizione }}</td>
         <td><a href="{{ $project->link }}">Link</a></td>
         
-        <td><a href="{{ route('admin.projects.show', $project) }}">Mostra</a></td>
-        @auth
-        <td><a href="{{ route('admin.projects.edit', $project) }}">Modifica</a></td>
-        @endif
-        @auth
-        <td>
-          <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
-
-            <button class="btn btn-link link-danger">Elimina</button>
-            @csrf
-            @method('DELETE')
-          
-          </form>
-        </td>
-        @endif
-
-      </tr>
-        @endforeach
+        <td><a href="{{ route('projects.show', $project) }}">Mostra</a></td>
+       
+    @endforeach
 
       </table>
 

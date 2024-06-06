@@ -46,19 +46,26 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.projects.index')}}">Progetti</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.projects.create')}}">Crea progetto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.types.index')}}">Tipologie</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.types.create')}}">Aggiungi Tipologia</a>
-                        </li>
-                       
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.projects.index')}}">Progetti</a>
+                            </li>
+        
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.projects.create')}}">Crea progetto</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.types.index')}}">Tipologie</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.types.create')}}">Aggiungi Tipologia</a>
+                            </li>
+                        @endauth
+                        @guest
+                            <li>
+                                <a class="nav-link" href="{{ route('projects.index')}}">Progetti</a>
+                            </li>
+                        @endguest
                     </ul>
 
                     <!-- Right Side Of Navbar -->
