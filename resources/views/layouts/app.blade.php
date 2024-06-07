@@ -15,8 +15,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-        </style>
-
+    
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+    </style>
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
 </head>

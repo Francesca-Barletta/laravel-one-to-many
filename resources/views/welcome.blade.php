@@ -9,9 +9,9 @@
                 </g>
             </svg>
         </div> --}}
-        <h1 class="anton-regular main-title ps-5">
-          FRANCESCA BARLETTA
+        <h1 class="main-title  p-5">
+          FRANCESCA<br> BARLETTA
         </h1>
-        <h3 class="anton-regular second-title ps-3">web DEVELOPER</h3>
+        <h3 class="second-title ps-3">WEB DEVELOPER</h3>
     </div>  
 @endsection

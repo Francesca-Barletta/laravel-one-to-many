@@ -1,9 +1,10 @@
 .navbar{
-    background-color: rgb(247, 219, 160);
+    background-color: #162A45;
 }
 .logo{
-    color:rgb(47, 50, 179);
+    color:#FFB552;
     font-size:40px;
+    margin-right:20px;
 }
 .anton-regular {
     font-family: "Anton", sans-serif;
@@ -12,4 +13,9 @@
  }
  .nav-link{
     font-weight:600;
+    color:#FFB552;
+    &:hover{
+        color:#F78721 ;
+        font-weight:700;
+    }
  }
