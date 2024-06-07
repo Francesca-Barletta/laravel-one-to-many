@@ -1,9 +1,12 @@
 @extends('layouts.app')
 @section('Progetti|Francesca Barletta')
 @section('content')
-    <div class="container">
-        <h2>Crea un nuovo progetto</h2>
-    </div>
+    <div class="container-fluid create-content">
+        <div class="container ">
+            <h2 class="create-title">Crea un nuovo progetto</h2>
+        </div>
+      
+    
     <form action="{{ route('admin.projects.store') }}" method="POST">
         @csrf
         <div class="container">
@@ -42,4 +45,5 @@
             </div>
         @endif
     </form>
+    </div>
 @endsection
