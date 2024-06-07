@@ -109,7 +109,7 @@
             </div>
         </nav>
 
-        <main class="">
+        <main class="main-content">
             @yield('content')
         </main>
     </div>
